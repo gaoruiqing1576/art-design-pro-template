@@ -43,7 +43,7 @@ export const headerBarConfig: HeaderBarFeatureConfig = {
     description: '通知中心，显示系统通知和消息'
   },
   language: {
-    enabled: false,
+    enabled: true,
     description: '多语言切换功能'
   },
   settings: {

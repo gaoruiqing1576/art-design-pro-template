@@ -103,7 +103,7 @@
           popper-class="langDropDownStyle"
           v-if="shouldShowLanguage"
         >
-          <ArtIconButton icon="hugeicons:global" class="language-btn text-[19px]" />
+          <ArtIconButton icon="lucide:languages" class="language-btn text-[19px]" />
           <template #dropdown>
             <ElDropdownMenu>
               <div v-for="item in languageOptions" :key="item.value" class="lang-btn-item">
@@ -423,9 +423,9 @@
     animation: rotate180 0.5s;
   }
 
-  .language-btn:hover :deep(.art-svg-icon) {
-    animation: moveUp 0.4s;
-  }
+  // .language-btn:hover :deep(.art-svg-icon) {
+  //   animation: moveUp 0.4s;
+  // }
 
   .setting-btn:hover :deep(.art-svg-icon) {
     animation: rotate180 0.5s;

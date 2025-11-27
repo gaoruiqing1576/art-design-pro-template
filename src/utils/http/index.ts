@@ -25,7 +25,7 @@ import { BaseResponse } from '@/types'
 const REQUEST_TIMEOUT = 15000
 const LOGOUT_DELAY = 500
 const MAX_RETRIES = 0
-const RETRY_DELAY = 1000
+const RETRY_DELAY = 5000
 const UNAUTHORIZED_DEBOUNCE_TIME = 3000
 
 /** 401防抖状态 */
@@ -65,7 +65,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (request: InternalAxiosRequestConfig) => {
     const { accessToken } = useUserStore()
-    if (accessToken) request.headers.set('Authorization', accessToken)
+    if (accessToken) request.headers.set('Authorization', `Bearer ${accessToken}`)
 
     if (request.data && !(request.data instanceof FormData) && !request.headers['Content-Type']) {
       request.headers.set('Content-Type', 'application/json')
